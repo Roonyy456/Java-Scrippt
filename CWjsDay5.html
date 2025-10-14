@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CWday5</title>
+</head>
+<body>
+<button type="submit" onclick="callall();">click here</button>
+<p id="demo">hii</p>
+<p id="demo1">hii</p>
+<p id="demo2">hii</p>
+<script>
+ let order= {
+    itemname:"addidas shoe",
+    isdelivered: true,
+    daysincedelivery:6
+ }
+ function callall() {
+ var both=(order.isdelivered < 7) || (order.daysincedelivery < 7);
+  document.getElementById("demo").innerHTML =both;
+  var ress=(both==true)?  "Eligible for Return":"Return Period Expired";
+ document.getElementById("demo1").innerHTML =ress;
+  document.getElementById("demo2").innerHTML =order.itemname;
+ }
+</script>
+
+</body>
+</html>

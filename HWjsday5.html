@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CWday5</title>
+</head>
+<body>
+<button type="submit" onclick="callall();">click here</button>
+<p id="demo">hii</p>
+<p id="demo1">hii</p>
+
+<script>
+ let details= {
+    name:"rahul",
+    age:21
+ }
+ function callall() {
+    var enoughold=(details.age > 18)? "Access Granted":"Access Denied"
+  document.getElementById("demo").innerHTML =enoughold;
+  
+  document.getElementById("demo1").innerHTML ="Age of user: "+ details.age;
+ }
+ delete details.name;
+ console.log(details);
+</script>
+
+</body>
+</html>

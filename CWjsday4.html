@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CWday4</title>
+</head>
+<body>
+
+<p id="demo">hii</p>
+<p id="demo1">hii</p>
+<p id="demo2">hii</p>
+<p id="demo3">hii</p>
+<p id="demo4">hii</p>
+<p id="demo5">hii</p>
+
+
+<script>
+    var random=Math.floor(Math.random()*100)+1;
+    document.getElementById("demo").innerHTML = random;
+    var userscore="75"
+    var strcon=Number(userscore)
+    document.getElementById("demo1").innerHTML = strcon;
+    var diff=random-strcon;
+    document.getElementById("demo2").innerHTML = diff;
+    var roundsqrt=Math.round(Math.sqrt(userscore));
+    document.getElementById("demo3").innerHTML = roundsqrt;
+    var pivalue=Math.PI
+    document.getElementById("demo4").innerHTML =pivalue;
+    var convert="50"*2;
+    document.getElementById("demo5").innerHTML =convert;
+</script>
+</body>
+</html>

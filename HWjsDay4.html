@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HWday4</title>
+</head>
+<body>
+
+<p id="demo">hii</p>
+<p id="demo1">hii</p>
+<p id="demo2">hii</p>
+<p id="demo3">hii</p>
+<p id="demo4">hii</p>
+<p id="demo5">hii</p>
+<p id="demo6">hii</p>
+<p id="demo7">hii</p>
+<p id="demo8">hii</p>
+
+
+<script>
+    var mystery=Math.floor(Math.random()*50)+1;
+    document.getElementById("demo").innerHTML = mystery;
+    var userscore="45"
+    var strcon=Number(userscore)
+    document.getElementById("demo1").innerHTML = strcon;
+    var diff=mystery-strcon;
+    document.getElementById("demo2").innerHTML = diff;
+    var sqrt=Math.sqrt(userscore)
+    document.getElementById("demo3").innerHTML = sqrt;
+    var logsqrt=Math.log(sqrt);
+    document.getElementById("demo6").innerHTML = logsqrt;
+    var logpivalue=Math.log(Math.PI);
+    document.getElementById("demo4").innerHTML =logpivalue;
+    var convert="20"*5;
+    document.getElementById("demo5").innerHTML =convert;
+
+    document.getElementById("demo7").innerHTML =Math.min(10,20,+mystery);
+    document.getElementById("demo8").innerHTML =Math.max(10,20,+mystery);
+</script>
+</body>
+</html>
