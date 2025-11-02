@@ -1,0 +1,39 @@
+<!-- Create a simple web-based event reminder tool. The page should take a user's input of a past date (for example, their last birthday) and display:
+The year, month (name, not number), and day of that date.
+How many full years have passed since that date.
+A custom message that says:
+“It has been more than a year since that date.”
+or “It has been less than a year since that date.” -->
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>CWday7</title>
+</head>
+<body>
+
+<button onclick="nek()">click here</button>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+var details={
+    name:"ashwin",
+    date:"2000-9-30"
+}
+var month=["jan","feb","march","april","may","june","july","aug","September","oct"];
+var fulldate=new Date(details.date)
+var year=fulldate.getFullYear();
+var monthss=fulldate.getMonth();
+var crctmonth=month[monthss]
+var crctday=fulldate.getDate();
+var age=new Date()
+var crctagedif=age.getFullYear()-year;
+document.getElementById("demo").innerHTML = "He was born on " + crctday +"-"+ crctmonth +"-"+ year;
+function nek() {
+alert( "Ninak ippa " + crctagedif + " vayasaai");
+}
+</script>
+</body>
+</html>

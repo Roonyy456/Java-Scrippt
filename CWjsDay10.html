@@ -1,0 +1,26 @@
+<!-- You have some information from a user in JSON format, including their name, email, and message. Your job is to:
+Convert this JSON text into a JavaScript object.
+Write a named arrow function that tries to print "Message received from <name>".
+If something goes wrong (like the JSON is broken), show an error message.
+Run the function to show the result in the console. -->
+
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CWjsday10</title>
+</head>
+<body>
+<script>
+    try {
+        let info=JSON.parse('{ "name":"Kevin", "age":26, "city":"Trivandrum"}');
+    greeting = () => {
+  console.log("Message received from " + info.name) 
+}
+greeting();
+    } catch(err) {
+        console.log(err.message)
+    }
+</script>
+</body>
+</html>

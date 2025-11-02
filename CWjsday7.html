@@ -1,0 +1,46 @@
+ <!-- You are building a simple birthday tracker for your friends. You need to:
+Create an object named friend with properties: name and birthDate (in the format YYYY-MM-DD).
+
+Write a function getBirthdayDetails that:
+    Accepts the friend object as input,
+    onverts the birthDate string into a date,
+    Extracts and prints the year, month name, and day of the month,
+    Calculates how many years old the friend is as of today.
+Display the result in the format:
+ "John was born on 5 July, 1999 and is 25 years old." -->
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>CWday7</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<!-- <p id="demo4"></p> -->
+
+<script>
+    let nameanddate = {
+        name:"joyal",
+        Date:"2000-8-14"
+    };
+var date=nameanddate.Date;
+var comm=new Date(date);
+document.getElementById("demo").innerHTML = comm;
+var years=comm.getFullYear();
+var month=comm.getMonth();
+var day=comm.getDate();
+document.getElementById("demo1").innerHTML = day + "-" + (month + 1) + "-" + years;
+var current=new Date();
+var age= current.getFullYear() - years;
+document.getElementById("demo2").innerHTML ="Age: " + age;
+let months=["January","February","March","April","May","June",
+              "July","August","September","October","November","December"];
+var monthday=months[month]
+document.getElementById("demo3").innerHTML = nameanddate.name + " was born on " + monthday + " , " + years + " and is " + age + " years old."
+</script>
+</body>
+</html>

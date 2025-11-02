@@ -1,0 +1,52 @@
+<!-- Create a simple feedback web page that includes:
+A form with:
+    A text input for the user's name
+    A textarea for their feedback
+A submit button
+    When the form is submitted:
+   The input values (name and feedback) should display on the same page without refreshing.
+   A confirmation message (e.g., “Thanks for your feedback!”) should be shown in green.
+   After 5 seconds, the confirmation message should disappear automatically.
+When the mouse hovers over the feedback display, the text should turn blue. When the mouse leaves, it should return to black. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HWjsday12</title>
+</head>
+<body>
+
+  <form id="myForm">
+    <input type="text" id="textbox" placeholder="Enter your name"> <br> <br>
+    <textarea id="area" rows="3" cols="20" placeholder="Feedback"></textarea> <br>
+    <button type="submit">Submit</button>
+  </form>
+<span id="output1" onmouseover="mOver(this)" onmouseout="mOut(this)" ></span>
+<span id="output2" onmouseover="mOver(this)" onmouseout="mOut(this)" ></span>
+<p id="message"></p> 
+<script>
+     document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+ let x = document.getElementById("textbox").value
+ let y = document.getElementById("area").value
+ let message = document.getElementById("message");
+  document.getElementById("output1").innerHTML= x + "<br>"; 
+  document.getElementById("output2").innerHTML= y ;
+
+  message.innerText = "Thanks for your feedback!";
+      message.style.color = "green";
+
+       setTimeout(function() {
+        message.innerText = "";
+      }, 5000);
+     });
+
+      function mOver(obj) {
+  obj.style.color = "blue"
+}
+function mOut(obj) {
+  obj.style.color = "black"
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HWday6</title>
+</head>
+<body>
+
+    <!-- You are working on a simple "Student Result Dashboard" for a school's internal website. You are given an array of student objects where each student has a name and score. Your tasks are:
+
+List all student names.
+
+Create a new array that shows only the names of students who scored more than 60.
+
+Find the total score of all students.
+
+Check if all students passed (score > 35).
+
+Check if at least one student scored more than 90.
+
+Sort the students by their score in descending order and display their names along with scores. -->
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<script>
+var nameandscore=[{name:"ashwin",score:45},{name:"Joyal",score:47},{name:"amal",score:95},{name:"gokul",score:65}];
+var nameonly= nameandscore.map(function(item) {
+  return  item.name;
+});
+document.getElementById("demo").innerHTML = "all students names: <br>" + nameonly.join("<br>");
+var above60=nameandscore.filter(function(student) {
+  return student.score > 60;
+});
+var above= above60.map(function(student) {
+  return student.name;
+});
+document.getElementById("demo1").innerHTML = "students who scored more than 60: <br>" + above.join("<br>");
+var totalscore= nameandscore.reduce(function(sum,value) {
+  return sum+value.score;
+},0);
+document.getElementById("demo2").innerHTML = "total score of students : " + totalscore;
+var Checkpassed = nameandscore.every(function(value) {
+  return value.score > 35;
+});
+console.log("all students passed is " + Checkpassed);
+var above90 = nameandscore.some(function(value) {
+  return value.score > 90;
+});
+console.log("scored above 90 is  " + above90);
+var sorting = nameandscore.sort(function(a,b) {
+  return b.score-a.score;
+});
+var display=sorting.map(function(value,index) {
+  return value.name + "-" + value.score
+})
+document.getElementById("demo3").innerHTML = display.join("<br>");
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- You are helping design a simple product listing feature for an online grocery store. You have an array of product names and an array of their prices. Your tasks are:
+
+Merge the product names and prices into one array in the format: "Product: Apple - Price: 50"
+
+Display all product entries using a loop.
+
+Filter and show only the products with prices greater than 50.
+
+Add a new product "Watermelon" with price 80 to the list, and then display the updated product list. -->
+
+<h2>Product and their price</h2>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var Products=["Product:appam","Product:dosa","Product:idli"];
+var price=[45,62,98];
+var merging=Products.map(function(value,index) {
+  return value + " - Price:" +price[index];
+});
+document.getElementById("demo").innerHTML = merging.join("<br>");
+var greater50=merging.filter(function(item,index){
+      return price[index] > 50;
+});
+document.getElementById("demo1").innerHTML = greater50;
+merging.push("Product:puttu - Price:80");
+document.getElementById("demo2").innerHTML = merging;
+</script>
+
+</body>
+</html>
