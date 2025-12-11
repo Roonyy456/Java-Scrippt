@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript Program to Check Prime Number</title>
+</head>
+<body>
+    <script>
+        let i,x = 97;
+        var check = true;
+
+       for(i=2;i<(x/2);i++){
+        if(x%i == 0){
+            check = false;
+            break;   
+       }
+    }
+    if(check === false){
+        console.log("Not a Prime Number")
+    } else if(check === true){
+        console.log("Prime Number")
+    }
+    </script>
+</body>
+</html>

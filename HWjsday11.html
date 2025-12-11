@@ -5,63 +5,43 @@ Use a setter method to safely update the email (only allow setting if the email 
 Use the this keyword correctly in all functions.
 Create an object from the class, try updating the email using both a correct and incorrect format, and print out all the user details using getter methods. -->
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>HWjsday11</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HWjsday11</title>
 </head>
 <body>
-<p id="demo"></p>
-
-<script>
-class UserInfo {
-  constructor(name, age, email) {
-    this.name = name;
-    this.age = age;
-    this._email = email; // underscore = private-like variable
-  }
-
-  // getters
-  get userName() {
-    return this.name;
-  }
-
-  get userAge() {
-    return this.age;
-  }
-
-  get email() {
-    return this._email;
-  }
-
-  // setter for email
-  set email(newEmail) {
-    if (typeof newEmail === "string" && newEmail.includes("@")) {
-      this._email = newEmail;
-      console.log("✅ Email updated successfully!");
-    } else {
-      console.log("❌ Invalid email! Must contain '@'.");
+  <p id="obj"></p>
+  <p id="name&age"></p>
+  <p id="newid"></p>
+  
+  <script>
+    class User{
+      constructor(name,age,email){
+        this.name=name;
+        this.age=age;
+        this.email=email;
+      }
+      get getNameAge(){
+        return `User Name: ${this.name}<br> Age: ${this.age}`
+      }
+      set setEmailId(email){
+        if(typeof email === "string" && email.includes("@")){
+            this.email = email;
+        }
+      }
+      get getemail(){
+        return this.email;
+      }
     }
-  }
-}
-
-// create an object
-let user1 = new UserInfo("Ashwin PO", 25, "ashwinpo@gmail.com");
-
-// ask for new email
-let newEmail = prompt("Enter new email ID:");
-
-// try updating
-user1.email = newEmail;
-
-// show all details
-document.getElementById("demo").innerHTML =
-  "Name: " + user1.userName + "<br>" +
-  "Age: " + user1.userAge + "<br>" +
-  "Email: " + user1.email;
-
-console.log(user1);
-</script>
+    User1 = new User("Robin",21,"rrrhjg@gmail.com")
+    User1.setEmailId = "jmngj@gmail.com";
+    document.getElementById("newid").innerHTML = `Current Email ID : ${User1.getemail}`;
+    document.getElementById("obj").innerHTML = User1;
+    document.getElementById("name&age").innerHTML = User1.getNameAge;
+  </script>
 </body>
 </html>

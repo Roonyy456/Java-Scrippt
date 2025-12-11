@@ -13,22 +13,22 @@ Use try-catch to handle any error if the JSON is invalid. -->
 </head>
 <body>
 <script>
-    let checked;
-    let received=JSON.parse('{ "name":"Kevin", "rating":0.8, "message":"Thanks for your service"}');
-    const greeting = () => {
-  checked = /Thank/gi.test(received.message);
-    }
-    greeting();
-    try {
-        if(checked === true){
-            console.log("Positive feedback received");
-        } else {
-             console.log("Feedback noted");
+    try{
+    let contactForm = JSON.parse(' {"user1" : "heaven","feedback1": "I want to thank the team for their prompt support and excellent service." }')
+    let func = (contactForm) => {
+        let a =  contactForm.feedback1
+        a.toLowerCase().includes("thank")
+        if( a.toLowerCase().includes("thank")){
+         console.log("Positive feedback received")
+        }else {
+            console.log("Feedback noted")
         }
-    } catch(err) {
-         console.log(err.message)
-    }
+    };
+    func(contactForm);
 
+    }catch(err){
+        console.log(err)
+    }
 </script>
 </body>
 </html>

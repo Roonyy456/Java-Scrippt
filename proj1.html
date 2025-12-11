@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        text-align: center;
+      }
+      .course-container {
+        border-radius: 10px;
+        background-color: rgb(119, 119, 255);
+        width: 300px;
+        padding: 15px;
+        border-radius: 15px;
+      }
+      #all-containers{
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <!-- heading -->
+     <div class="header">
+    <h1 >CourZera</h1>
+    <h4 class="total-course"></h4>
+    </div>
+  
+    <!-- search  -->
+    <!-- course list -->
+    <section id="all-containers">
+    </section>
+     <!-- top rated -->
+    <div class="header1">
+      <h2 class="top-rated" style="text-align: center;"></h2>
+      <div class="topper" style="margin-left: 600px;">
+      </div>
+      </div>
+    <script>
+      const courses = [
+        {
+          courseName: "Python",
+          price: 4999,
+          rating: 4.7,
+          availableLanguages: ["English", "Hindi", "Malayalam"],
+          timePeriod: "3 Months",
+          contactNumber: "+91 98765 43210",
+        },
+        {
+          courseName: "JavaScript",
+          price: 4500,
+          rating: 4.6,
+          availableLanguages: ["English", "Hindi"],
+          timePeriod: "2 Months",
+          contactNumber: "+91 98765 43210",
+        },
+        {
+          courseName: "Java",
+          price: 6000,
+          rating: 4.8,
+          availableLanguages: ["English"],
+          timePeriod: "4 Months",
+          contactNumber: "+91 98765 43210",
+        },
+        {
+          courseName: "C++",
+          price: 4000,
+          rating: 4.5,
+          availableLanguages: ["English", "Hindi"],
+          timePeriod: "3 Months",
+          contactNumber: "+91 98765 43210",
+        },
+        {
+          courseName: "MERN",
+          price: 7999,
+          rating: 4.9,
+          availableLanguages: ["English"],
+          timePeriod: "5 Months",
+          contactNumber: "+91 98765 43210",
+        },
+      ];
+      
+     
+      function displayitems(courses) {
+        let courseid = document.querySelector("#all-containers");
+        let courseUI = " ";
+        courses.forEach((course) => {
+          courseUI += ` <div class="course-container">
+          <h4>${course.courseName}</h4>
+            <p>Price:${course.price}</p>
+            <p>Course Rate:${course.rating}</p>
+            <p>Available Language:${course.availableLanguages}</p>
+            <p>Time Period:${course.timePeriod}</p>
+            <p>Contact Number:${course.contactNumber}</p>
+            </div>`;
+        });
+        courseid.innerHTML += courseUI;
+      }
+      displayitems(courses);
+      document.querySelector(".total-course").innerHTML = `Total Course Available: ${courses.length}`
+      
+      let topCourses = courses.map((course) => {
+        return course.rating
+      })
+     
+      let toprated = topCourses.reduce((accu,rating) => {
+        return accu>rating?accu:rating;
+      })
+      document.querySelector(".top-rated").innerHTML = `Top Rated Course: MERN with ${toprated} rating`
+   
+       function displayitems1(courses) {
+        let courseid1 = document.querySelector(".topper");
+        let courseUI1 = " ";
+        courses.forEach((course) => {
+          if(toprated === course.rating) {
+          courseUI1 = ` <div class="course-container">
+          <h4>${course.courseName}</h4>
+            <p>Price:${course.price}</p>
+            <p>Course Rate:${course.rating}</p>
+            <p>Available Language:${course.availableLanguages}</p>
+            <p>Time Period:${course.timePeriod}</p>
+            <p>Contact Number:${course.contactNumber}</p>
+            </div>`;
+          }
+        });
+        courseid1.innerHTML = courseUI1;
+      }
+      displayitems1(courses);
+    </script>
+  </body>
+</html>
