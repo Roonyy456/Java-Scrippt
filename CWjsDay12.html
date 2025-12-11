@@ -10,28 +10,22 @@ Use a form and prevent the page from reloading when the button is clicked. -->
   <title>CWjsday12</title>
 </head>
 <body>
-
-  <form id="myForm">
-    <input type="text" id="textbox" placeholder="Type something...">
-    <button type="submit">Submit</button>
+  <form action="">
+    <input id="text" type="text" value="Something">
+    <input type="button" value="submit" onclick="change()">
   </form>
-  <span id="output" onmouseover="mOver(this)" onmouseout="mOut(this)" ></span>
-
+  <br>
+  <span style="color: blue;" id="result" onmouseover="over()" onmouseout="out()"></span>
   <script>
-       document.getElementById("myForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      var text = document.getElementById("textbox").value;
-      document.getElementById("output").innerText = "You typed: " + text;
-      document.getElementById("output").style.color="blue";
-    
-    });
-    function mOver(obj) {
-  obj.style.color = "green"
-}
-function mOut(obj) {
-  obj.style.color = "blue"
-}
-
+    function change(){
+        document.getElementById("result").innerHTML = document.getElementById("text").value
+    }
+    function over(){
+      document.getElementById("result").style.color = "green";
+    }
+    function out(){
+      document.getElementById("result").style.color = "blue";
+    }
   </script>
 
 </body>
